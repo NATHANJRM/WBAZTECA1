@@ -1,0 +1,60 @@
+﻿@using WBAZTECA1.Models
+@model IEnumerable<WBAZTECA1.Models.Folio>
+
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<p>
+    @Html.ActionLink("Agregar Nueva Nota", "Create")
+</p>
+<table class="table" style="width:50%; margin: 0 auto;" >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.idnota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detalles.Componente)
+        </th>*@
+        <th>Detalle</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nota)
+        </td>
+        <td>
+            $ @Html.DisplayFor(modelItem => item.Total)
+        </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.idnota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detalles.Componente)
+        </td>*@
+        <td>
+            @Html.ActionLink("Desglose", "Details", new { id = item.id })
+        </td>
+    </tr>
+}
+
+</table>

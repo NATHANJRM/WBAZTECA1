@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = null;
+}
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Index</title>
+    </head>
+    <body>
+        <div>
+            <h2>Index</h2>
+
+            @if (TempData["error"] != null)
+            {
+                <h3>@TempData["error"]</h3>
+            }
+
+            <form>
+                <table>
+                    <tr>
+                        <td><input type="text" name="Usuario" placeholder="Usuario" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" name="Contraseña" placeholder="contraseña" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Ingresar" formaction="/Home/Validar/" /></td>
+                    </tr>
+                </table>
+            </form>
+
+            <form>
+                <table>
+                    <tr>
+                        <td><input type="text" name="Nombre" placeholder="Nombre" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="Usuario" placeholder="Usuario" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="password" name="Contraseña" placeholder="contraseña" /></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="registrar" formaction="/Home/Registro/" /></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+    </html>*@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Index</title>
+    <link rel="stylesheet" type="text/css" href="~/styles/StyleIndex.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        @if (TempData["error"] != null)
+        {
+            <h3>@TempData["error"]</h3>
+        }
+
+        <div class="signup">
+            <form>
+                <label for="chk" aria-hidden="true">Iniciar Sesion</label>
+                <input type="text" name="Usuario" placeholder="Usuario">
+                <input type="password" name="Contraseña" placeholder="Contraseña">
+                <button type="submit" formaction="/Home/Validar">Iniciar</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form>
+                <label for="chk" aria-hidden="true">Registrarse</label>
+                <input type="text" name="Nombre" placeholder="Nombre Completo">
+                <input type="text" name="Usuario" placeholder="Usuario" required="">
+                <input type="password" name="Contraseña" placeholder="Contraseña" required="">
+                <button type="submit" formaction="/Home/Registro">Registrar</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

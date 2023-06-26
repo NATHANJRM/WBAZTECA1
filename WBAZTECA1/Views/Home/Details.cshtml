@@ -1,0 +1,30 @@
+﻿@model WBAZTECA1.Models.Folio
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Desglose</h2>
+
+<div>
+    
+    <table style="width: 50%">
+        <tr><td><br /></td></tr>
+        <tr>
+            <td colspan="2">@Html.DisplayFor(model => model.cantidad) @Html.DisplayFor(model => model.Detalles.Componente)</td>   
+            <td></td>
+            <td rowspan="2">$ @Html.DisplayFor(model => model.Total) Pesos</td>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.fecha) Venta Realizada</td>            
+        </tr>        
+        <tr style="font-size:15px">
+            <th style="text-align:right" colspan="2">Venta Total</th>
+            <td></td>
+            <th>$ @Html.DisplayFor(model => model.Total) Pesos</th>
+        </tr>
+    </table>    
+</div>
+<p>    
+    @Html.ActionLink("Atras", "Inicio")
+</p>

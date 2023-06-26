@@ -1,0 +1,44 @@
+﻿@using WBAZTECA1.Models;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+</head>
+<body>
+
+    @{ 
+        Logeo log = new Logeo();
+        if (Session["l"] != null)
+        {
+            log = (Logeo)Session["l"];
+        }
+    }
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand">@log.Nombre</a>
+            <form class="d-flex" role="search">                
+            </form>
+            <a class="nav-link active" href="/Home/Cerrar">Salir</a>
+        </div>
+    </nav>
+    <br />
+    
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Proyecto TV Azteca</p>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</body>
+</html>

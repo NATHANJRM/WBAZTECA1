@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f7e4f946c23948ad898727a82d54b78c" Name="Diagram1">
+        <EntityTypeShape EntityType="ge19Model.Detalles" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ge19Model.Folio" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="ge19Model.Logeo" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ge19Model.Todo" Width="1.5" PointX="5.25" PointY="1.25" IsExpanded="true" />
+        <AssociationConnector Association="ge19Model.FK_Folio_Detalles1" ManuallyRouted="false" />
+        <AssociationConnector Association="ge19Model.FK_Todo_Detalles" ManuallyRouted="false" />
+        <AssociationConnector Association="ge19Model.FK_Folio_Logeo1" ManuallyRouted="false" />
+        <AssociationConnector Association="ge19Model.FK_Todo_Folio" ManuallyRouted="false" />
+        <AssociationConnector Association="ge19Model.FK_Todo_Logeo" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
